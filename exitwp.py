@@ -354,7 +354,8 @@ def write_jekyll(data, target_format):
             if len(tax_out) > 0:
                 out.write(toyaml(tax_out))
 
-            out.write('---\n\n')
+            out.write('---\n')
+            out.write('{% include JB/setup %}\n\n')
             try:
                 out.write(html2fmt(i['body'], target_format))
             except:
