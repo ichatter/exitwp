@@ -33,10 +33,14 @@ taxonomies:
 # Replace certain patterns in body
 # Simply replace the key with its value
 body_replace: {
-  # '<pre.*?lang="(.*?)".*?>': '\n{% codeblock \1 lang:\1 %}\n',
-  # '<pre.*?>': '\n{% codeblock %}\n',
-  # '</pre>': '\n{% endcodeblock %}\n',
-
-#    '[python]': '{% codeblock lang:python %}',
-#    '[/python]': '{% endcodeblock %}',
+    '<code.*?class="(.*?)".*?>': '\n```\1 \n',
+    '<pre.*?>': '\n```\n',
+    '</code>': '\n```\n',
+    '<pre class="brush:(.*?)".*?>':'\n```\1\n',
+    '<pre class="lang:(.*?) .*?".*?>':'\n```\1\n',
+    '</pre>': '\n```\n',
+    'http://blog.yourtion.com/wp-content/uploads/': '{{ IMAGE_PATH }}',
+   #
+  #   '[php]': '{% codeblock lang:php %}',
+  #   '[/php]': '{% endcodeblock %}',
 }
