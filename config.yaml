@@ -5,7 +5,7 @@ wp_exports: wordpress-xml
 build_dir: build
 
 # Output format: primary choices are html or markdown.
-target_format: markdown
+target_format: md
 
 # The date format of the wikipedia export file.
 # I'm not sure if this ever differs depending on wordpress localization.
@@ -40,7 +40,7 @@ body_replace: {
     '<pre class="lang:(.*?) .*?".*?>':'\n```\1\n',
     '</pre>': '\n```\n',
     'http://blog.yourtion.com/wp-content/uploads/': '{{ IMAGE_PATH }}',
-   #
+  #
   #   '[php]': '{% codeblock lang:php %}',
   #   '[/php]': '{% endcodeblock %}',
 }
